@@ -1,5 +1,7 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -42,6 +44,7 @@ public class Frame_1  extends JFrame {
 		label_1 = new JLabel("First Name:");
 		label_2 = new JLabel("Last Name:");
 		label_3 = new JLabel("Password:");
+		
 		first_name = new JTextField(2);
 		last_name = new JTextField(2);
 		password = new JPasswordField(2);
