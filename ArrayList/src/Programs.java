@@ -11,13 +11,17 @@ public class Programs {
 		}
 		ListIterator<String> iter = list_1.listIterator();
 		System.out.println(list_1);
-		while(iter.hasNext())
+		while(iter.hasNext()) // hasNext(),start from index 0, if more elements detected, then return true
 		{
 			
 			System.out.printf("%d : %s \n",iter.nextIndex(), iter.next());
 		}
+		                    /*Element(0)   Element(1)   Element(2)   ... Element(n-1)
+		cursor positions:  ^            ^            ^            ^                  ^
+		next(), return the element next to the current cursor position and advance the cursor position forward
+		nextIndex(), return the the index of the element next to current cursor position
 		// Iterate backward
-		System.out.println("\n  Iterating backward ... \n");
+*/		System.out.println("\n  Iterating backward ... \n");
 		while(iter.hasPrevious())
 		{
 			System.out.printf("%d : %s \n",iter.previousIndex(), iter.previous());

@@ -1,5 +1,7 @@
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -55,7 +57,7 @@ public class Programs {
 			fw.append(" i am testing filewriter append");   // for char stream
 			fw.close();
 			/////////////////////////////read file////////////////////////////////
-			BufferedInputStream  bistream =  new BufferedInputStream(new FileInputStream(file));
+			BufferedReader  bistream =  new BufferedReader(new FileReader(file));
 			File newfile =  new File("newtext.txt");
 			if(newfile.exists())
 			{
@@ -64,11 +66,15 @@ public class Programs {
 			{
 				newfile.createNewFile();
 			}
-			BufferedOutputStream bostream_new = new BufferedOutputStream(new FileOutputStream(newfile,true)); 
-			while(bistream.read() != -1)
+//			BufferedOutputStream bostream_new = new BufferedOutputStream(new FileOutputStream(newfile,true)); 
+			BufferedWriter bostream_new = new BufferedWriter(new FileWriter(newfile,true)); 
+			System.out.println("i am here:");
+			int temp;
+			while((temp = bistream.read())!= -1)
 			{
-				System.out.println((char)bistream.read());
-				bostream_new.write((char)bistream.read());
+				
+				System.out.print((char)temp);
+				bostream_new.write((char)temp);
 			}
 			bostream_new.close();
 			bistream.close();
