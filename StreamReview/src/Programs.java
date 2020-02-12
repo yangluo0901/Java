@@ -70,3 +70,11 @@ public class Programs {
 	}
 
 }
+/*
+File/input: such as FileReader vs. InputStreamReader, former one can only handle file,howver later one can handle other format such as
+		URL, zip, classpath
+		
+Reader/Stream: such as FileReader vs. InputStream, reader is char based and Stream is byte based which can be used for image and video
+
+Buffered/un-buffered, bufferedReader can readLine(), faster
+*/
